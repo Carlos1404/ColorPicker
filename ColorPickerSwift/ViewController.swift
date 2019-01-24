@@ -18,13 +18,31 @@ class ViewController: UIViewController {
         switch segueIdentifier(for: segue) {
                 case .pickColor:
                     let destVC = segue.destination as! ColorPickerViewController
-                    destVC.delegate = self
+                    destVC.completionHandler = {(color) -> () in
+                        self.view.backgroundColor = color
+                        destVC.dismiss(animated: true, completion: {
+                            self.displayAlert(color: color)
+                        })
+            }
         }
+    }
+    
+    func displayAlert(color: UIColor){
+        let alertController = UIAlertController(title: "Choix de la couleur", message:
+            "Voulez-vous garder cette couleur ?", preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Oui", style: .default,handler: { _ in
+            self.lastColor = color
+        }))
+        alertController.addAction(UIAlertAction(title: "Non", style: .default,handler: { _ in
+            UIView.animate(withDuration: 1, animations: { self.view.backgroundColor = self.lastColor }, completion: nil)
+        }))
+        
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
 //MARK: ColorPickerViewDelegate
-extension ViewController: ColorPickerViewDelegate {
+/*extension ViewController: ColorPickerViewDelegate {
     func userDidChooseColor(color: UIColor){
         print(color)
         self.view.backgroundColor = color
@@ -44,7 +62,7 @@ extension ViewController: ColorPickerViewDelegate {
         
         self.present(alertController, animated: true, completion: nil)
     }
-}
+}*/
 
 extension ViewController: SegueHandlerType {
     

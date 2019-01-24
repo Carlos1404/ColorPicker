@@ -54,21 +54,21 @@
                                 <rect key="frame" x="0.0" y="102.5" width="375" height="462"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EF1-60-0t7">
-                                        <rect key="frame" x="139.5" y="0.0" width="96" height="92.5"/>
+                                        <rect key="frame" x="16" y="0.0" width="343" height="92.5"/>
                                         <state key="normal" title="Green" backgroundImage="greenIcon"/>
                                         <connections>
                                             <action selector="greenButtonTouch:" destination="F44-CZ-4zb" eventType="touchUpInside" id="E23-cn-vOs"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5T9-IH-ypd">
-                                        <rect key="frame" x="139.5" y="185" width="96" height="92"/>
+                                        <rect key="frame" x="16" y="185" width="343" height="92"/>
                                         <state key="normal" title="Orange" backgroundImage="orangeIcon"/>
                                         <connections>
                                             <action selector="orangeButtonTouch:" destination="F44-CZ-4zb" eventType="touchUpInside" id="4go-HK-BsR"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kMw-fJ-xjA">
-                                        <rect key="frame" x="139.5" y="369.5" width="96" height="92.5"/>
+                                        <rect key="frame" x="16" y="369.5" width="343" height="92.5"/>
                                         <state key="normal" title="Purple" backgroundImage="purpleIcon"/>
                                         <connections>
                                             <action selector="purpleButtonTouch:" destination="F44-CZ-4zb" eventType="touchUpInside" id="RKc-AI-v4C"/>
@@ -76,8 +76,11 @@
                                     </button>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="kMw-fJ-xjA" firstAttribute="leading" secondItem="uN6-ML-LO5" secondAttribute="leading" constant="16" id="2zE-Wv-hjj"/>
                                     <constraint firstItem="kMw-fJ-xjA" firstAttribute="height" secondItem="5T9-IH-ypd" secondAttribute="height" id="hX3-kU-ENu"/>
+                                    <constraint firstAttribute="trailing" secondItem="EF1-60-0t7" secondAttribute="trailing" constant="16" id="jCm-iB-HPp"/>
                                     <constraint firstItem="5T9-IH-ypd" firstAttribute="height" secondItem="EF1-60-0t7" secondAttribute="height" id="vJ0-AD-3PB"/>
+                                    <constraint firstAttribute="trailing" secondItem="5T9-IH-ypd" secondAttribute="trailing" constant="16" id="yvx-GH-Mhx"/>
                                 </constraints>
                             </stackView>
                         </subviews>
@@ -98,9 +101,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="greenIcon" width="96" height="96"/>
-        <image name="orangeIcon" width="96" height="96"/>
-        <image name="purpleIcon" width="96" height="96.5"/>
+        <image name="greenIcon" width="25" height="25"/>
+        <image name="orangeIcon" width="25" height="25"/>
+        <image name="purpleIcon" width="25" height="25"/>
         <namedColor name="green">
             <color red="0.45882352941176469" green="0.74901960784313726" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
