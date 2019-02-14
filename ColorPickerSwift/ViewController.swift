@@ -13,18 +13,35 @@ import UIKit
 class ViewController: UIViewController {
     
     var lastColor: UIColor = ColorAsset.green.color
+
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        switch segue.identifier {
+        case R.segue.viewController.pickColor.identifier:
+            let segueInfo = R.segue.viewController.pickColor(segue: segue)
+            segueInfo?.destination.completionHandler = {(color) -> () in
+                self.view.backgroundColor = color
+                self.dismiss(animated: true, completion: {
+                    self.displayAlert(color: color)
+                })
+            }
+        default: break
+        }
+        
+        /*
         switch segueIdentifier(for: segue) {
                 case .pickColor:
                     let destVC = segue.destination as! ColorPickerViewController
                     destVC.completionHandler = {(color) -> () in
                         self.view.backgroundColor = color
-                        destVC.dismiss(animated: true, completion: {
+                        self.dismiss(animated: true, completion: {
                             self.displayAlert(color: color)
                         })
             }
         }
+        */
+        
     }
     
     func displayAlert(color: UIColor){
@@ -64,10 +81,10 @@ class ViewController: UIViewController {
     }
 }*/
 
-extension ViewController: SegueHandlerType {
+/*extension ViewController: SegueHandlerType {
     
     enum SegueIdentifier: String {
         case pickColor
     }
     
-}
+}*/

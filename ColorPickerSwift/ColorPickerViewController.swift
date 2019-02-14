@@ -15,15 +15,15 @@ class ColorPickerViewController: UIViewController {
     var completionHandler: ((UIColor) -> Void)!
     
     @IBAction func greenButtonTouch(_ sender: Any) {
-        completionHandler(ColorAsset.green.color)
+        completionHandler(R.color.green()!)
     }
     
     @IBAction func orangeButtonTouch(_ sender: Any) {
-        completionHandler(ColorAsset.orange.color)
+        completionHandler(R.color.orange()!)
     }
     
     @IBAction func purpleButtonTouch(_ sender: Any) {
-        completionHandler(ColorAsset.purple.color)
+        completionHandler(R.color.purple()!)
     }
     
 }
